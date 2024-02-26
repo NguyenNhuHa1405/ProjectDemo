@@ -1,0 +1,43 @@
+﻿@model IList<PostCategory>
+
+@{
+    ViewData["Title"] = "Home Page";
+    var CurrentCategory = ViewBag.CurrentCategory as Category;
+    var ParentsCategory = ViewBag.ParentsCategory as List<Category> ?? new List<Category>();
+}
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a class="breadcrumb-tg-a" href="/">Home</a></li>
+    @foreach(var c in ParentsCategory) {
+        <li class="breadcrumb-item"><a class="breadcrumb-tg-a" asp-route-slug="@c.Slug">@c.Title</a></li>
+    }
+    @if(CurrentCategory != null) {
+        <li class="breadcrumb-item"><a class="breadcrumb-tg-a" asp-route-slug="@CurrentCategory.Slug">@CurrentCategory.Title</a></li>
+    }
+  </ol>
+</nav>
+
+<div class="bg-light p-4" style="overflow: auto; height: 80vh;">
+    @foreach(var pc in Model) {
+        <div class="media py-1">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">
+                    <a asp-action="Views" 
+                        asp-route-slug="@pc.Post.Slug">@pc.Post!.Title</a>
+                </h5>
+                @pc.Post.Description
+                <div class="author-row">
+                    <strong>@pc.Post.Author!.UserName</strong>
+                    <i>@pc.Post.DateCreated.ToString("dd/MM/yyyy")</i>
+                </div>
+            </div>
+        </div>
+        <hr>
+    }
+</div>
+
+@section Sidebar {
+    @await Component.InvokeAsync("Category")
+}
+

@@ -1,0 +1,40 @@
+@model IEnumerable<Post>
+
+@{
+    ViewData["title"] = "Bài viết";
+    var index = 0;
+}
+
+<a class="btn btn-primary" asp-action="Create">Tạo bài viết</a>
+<p>Tổng số bài viết: @ViewBag.totalPage</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>@Html.DisplayNameFor(m => m.Title)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.Author)</th>
+            <th>@Html.DisplayNameFor(m => m.DateCreated)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in @Model) {
+            <tr>
+                <td>@(++index)</td>
+                <td>@string.Concat(p.Title!.Take(20)) ...
+                    <br>
+                    <p class="font-monospace">
+                        <a asp-action="Index" asp-controller="Category" class="text-decoration-none">Danh mục: </a>
+                        @string.Join(", ", p.PostCategories!.Select(pc => pc.Category!.Title))
+                    </p>
+                </td>
+                <td>@p.Description</td>
+                <td>@p.Author?.UserName</td>
+                <td>@p.DateCreated</td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id = "@p.PostId">Xóa</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+@await Html.PartialAsync("_PagingXTL", ViewBag.pageModel as PagingModel)

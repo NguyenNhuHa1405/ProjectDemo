@@ -1,0 +1,98 @@
+@model Post
+
+@{
+    ViewData["Title"] = "Bài viết";
+    var messageForRoom = ViewBag.MessageForRoom as List<MessageCommentModel>;
+}
+
+<div class="detailpost">
+    <h1>@Model.Title</h1>
+    <div class="sapo">@Model.Description</div>
+    <div class="mt-2">
+        <div>Ngày tạo: @Model.DateCreated</div>
+        Tác giả: <strong>@Model.Author!.UserName</strong>
+    </div>
+    <hr>
+    @Html.Raw(Model.Content)
+</div>
+
+<h5 class="mt-5">Bình Luận: </h5>
+<div class="container">
+    <img class="user-img" src="~/files/istockphoto-1409329028-612x612.jpg" alt="">
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Comment" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList" style="overflow: auto; height: 200px;">
+                @foreach(var message in messageForRoom!) {
+                    <li class="message-item" >@message.User!.UserName : @message.Content</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+
+@section Sidebar {
+     @await Component.InvokeAsync("Category")
+}
+@section Script {
+    <script>
+        "use strict";
+        var groupName = "@Model.Slug"
+        var connection = new signalR.HubConnectionBuilder().withUrl("/commenthub").build();
+
+        //Disable the send button until connection is established.
+        document.getElementById("sendButton").disabled = true;
+
+        connection.on("ReceiveMessage", function (user, message) {
+            var li = document.createElement("li");
+            li.className = "message-item"
+            document.getElementById("messagesList").appendChild(li);
+            document.getElementById("messageInput").value = "";
+            // We can assign user-supplied strings to an element's textContent because it
+            // is not interpreted as markup. If you're assigning in any other way, you 
+            // should be aware of possible script injection concerns.
+            li.textContent = `${user} : ${message}`;
+        });
+
+        connection.start().then(function () {
+            document.getElementById("sendButton").disabled = true;
+            document.getElementById("messageInput").addEventListener("input", () => {
+                document.getElementById("sendButton").disabled = false;
+            })
+            connection.invoke("JoinGroup", groupName);
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        document.getElementById("messageInput").addEventListener("keydown", (e) => {
+            if(e.key === "Enter" ) {
+                var message = document.getElementById("messageInput").value;
+                connection.invoke("SendMessageToGroup", groupName, message).catch(function (err) {
+                return console.error(err.toString());
+            });
+            }
+        })
+
+        document.getElementById("sendButton").addEventListener("click", function (event) {
+            var message = document.getElementById("messageInput").value;
+            connection.invoke("SendMessageToGroup", groupName, message).catch(function (err) {
+                return console.error(err.toString());
+            });
+            event.preventDefault();
+        });
+    </script>
+}

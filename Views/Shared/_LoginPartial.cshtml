@@ -1,0 +1,66 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService authorizationService
+
+@{
+    var result = await authorizationService.AuthorizeAsync(this.User, resource: null, "Admin");
+}
+
+<ul class="navbar-nav">
+@if(SignInManager.IsSignedIn(this.User)) {
+    <li class="nav-item btn-group" style="margin-right: 50px;">
+        <button class="mb-2 btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @UserManager.GetUserName(this.User)
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" asp-area="Identity" asp-controller="Manage" asp-action="Index">Hồ sơ cá nhân</a>
+            </li>
+            @if(result.Succeeded) {
+                <li>
+                    <a class="dropdown-item" asp-area="Identity" asp-controller="Role" asp-action="Index">Quản lý Role</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Identity" asp-controller="User" asp-action="Index">Quản lý User</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Database" asp-controller="DatabaseManage" asp-action="Index">Database</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Category" asp-controller="Category" asp-action="Index">Chuyên mục</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Category" asp-controller="Post" asp-action="Index">Bài Viết</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Files" asp-controller="File" asp-action="Index">Quản lý File</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Product" asp-controller="Product" asp-action="Index">Danh sách sản phẩm</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Product" asp-controller="StoreCategory" asp-action="Index">Chuyên mục sản phẩm</a>
+                </li>
+            }
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <form class="form-inline dropdown-item" asp-area="Identity" asp-controller="Account" asp-action="LogOff" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Đăng xuất</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+}
+else {
+    
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Account" asp-action="Register">Đăng ký</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+        </li>
+
+}
+</ul>

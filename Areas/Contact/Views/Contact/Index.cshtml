@@ -1,0 +1,32 @@
+@model IEnumerable<ContactModel>
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.DataSent)</th>
+            <th>@Html.DisplayNameFor(model => model.Message)</th>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var contact in @Model) {
+            <tr>
+                <td>@contact.FullName</td>
+                <td>@contact.Email</td>
+                <td>@contact.DataSent</td>
+                <td>@contact.Message</td>
+                <td>@contact.Phone</td>
+                <td>
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@contact.Id">Xem</a>
+                    <a class="btn btn-success" asp-action="Delete" asp-route-id="@contact.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

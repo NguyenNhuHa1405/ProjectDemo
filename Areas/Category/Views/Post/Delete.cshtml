@@ -1,0 +1,12 @@
+@model Post
+@{
+    ViewData["title"] = "Xóa bài viết";
+}
+
+<h2 class="text-muted">Có chắc chắn xóa bài viết?</h2>
+<h5>@Html.DisplayNameFor(p => p.Title):&nbsp;&nbsp; @Model.Title</h5>
+<hr>
+
+<form method="post" asp-route-id="@Model.PostId">
+    <button type="submit" class="btn btn-danger">Xóa</button>
+</form>

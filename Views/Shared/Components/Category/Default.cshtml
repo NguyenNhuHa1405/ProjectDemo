@@ -1,0 +1,35 @@
+@model IList<Category>
+
+@{
+  async Task RenderCategory(Category category, int level = 0) {
+    var prefix = string.Concat(Enumerable.Repeat("&nbsp;&nbsp;&nbsp;&nbsp;", level)); 
+    if (category.CategoryChildren!.Count > 0) {
+      foreach(var c in category.CategoryChildren) {
+          <li><a asp-action="Index" asp-route-slug="@c.Slug" class=" link-dark rounded">@Html.Raw(prefix)@c.Title</a></li>
+          await RenderCategory(c, level + 1);
+      }
+    }
+  }
+}
+
+<link rel="stylesheet" href="~/css/SidebarCategory.css">
+
+<div class="flex-shrink-0 p-3 bg-light" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <span class="fs-5 fw-semibold">Các Chủ Đề</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      @foreach(var c in Model) {
+          <li class="mb-1">
+            <button class="text-nowrap btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#@c.Slug" aria-expanded="false">
+              @c.Title
+            </button>
+            <div class="collapse" id="@c.Slug">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                @{ await RenderCategory(c); }
+              </ul>
+            </div>
+          </li>
+      }
+    </ul>
+  </div>

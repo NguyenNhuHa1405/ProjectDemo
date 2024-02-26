@@ -1,0 +1,18 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 pb-3">
+            @RenderSection("Sidebar", false)
+        </div>
+        <main role="main" class="col-9 pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Script", required:false)
+}

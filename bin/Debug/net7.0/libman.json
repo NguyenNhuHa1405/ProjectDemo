@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jqueryui@1.13.2",
+      "destination": "wwwroot\\lib\\jqueryui"
+    },
+    {
+      "library": "elfinder@2.1.65",
+      "destination": "wwwroot\\lib\\elfinder"
+    },
+    {
+      "provider": "unpkg",
+      "library": "@microsoft/signalr@7.0.14",
+      "destination": "wwwroot/js/signalr",
+      "files": [
+        "dist/browser/signalr.js"
+      ]
+    }
+  ]
+}

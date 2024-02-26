@@ -1,0 +1,12 @@
+@model Product
+@{
+    ViewData["title"] = "Xóa sản phẩm";
+}
+
+<h2 class="text-muted">Có chắc chắn xóa sản phẩm?</h2>
+<h5>@Html.DisplayNameFor(p => p.Name):&nbsp;&nbsp; @Model.Name</h5>
+<hr>
+
+<form method="post" asp-route-id="@Model.ProductId">
+    <button type="submit" class="btn btn-danger">Xóa</button>
+</form>

@@ -1,0 +1,27 @@
+    <link rel="stylesheet" href="~/summernote/summernote-lite.min.css">
+    <script src="~/summernote/summernote-lite.min.js"></script>
+    <script>
+        
+        $('#summernote').summernote({
+            placeholder: 'Fill in text',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+        var noteIcon = document.querySelector(".note-btn-group > .dropdown-toggle");
+        var style = noteIcon.appendChild(document.createElement("style"))
+        style.innerHTML = ".note-btn-group > .dropdown-toggle:after {display: none}";
+        var btnFullScreen = document.querySelector(".btn-fullscreen")
+        btnFullScreen.onclick = function() {
+            var fullScreen = document.querySelector(".fullscreen");
+            fullScreen.style.backgroundColor = "white";
+        }
+    </script>

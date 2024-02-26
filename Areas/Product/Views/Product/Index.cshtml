@@ -1,0 +1,43 @@
+@model IEnumerable<Product>
+
+@{
+    ViewData["title"] = "Sản phẩm";
+    var index = 0;
+}
+
+<a class="btn btn-primary" asp-action="Create">Tạo sản phẩm</a>
+<p>Tổng số sản phẩm: @ViewBag.totalPage</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Price)</th>
+            <th>@Html.DisplayNameFor(m => m.Author)</th>
+            <th>@Html.DisplayNameFor(m => m.DateCreated)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in @Model) {
+            <tr>
+                <td>@(++index)</td>
+                <td>@string.Concat(p.Name!.Take(20)) ...
+                    <br>
+                    <p class="font-monospace">
+                        <a asp-action="Index" asp-controller="StoreCategory" class="text-decoration-none">Danh mục: </a>
+                        @string.Join(", ", p.ProductCategories!.Select(pc => pc.StoreCategory!.Title))
+                    </p>
+                </td>
+                <td>@p.Price.ToString("n0") VND</td>
+                <td>@p.Author?.UserName</td>
+                <td>@p.DateCreated</td>
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id = "@p.ProductId">Chỉnh sửa</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id = "@p.ProductId">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@await Html.PartialAsync("_PagingXTL", ViewBag.pageModel as PagingModel)

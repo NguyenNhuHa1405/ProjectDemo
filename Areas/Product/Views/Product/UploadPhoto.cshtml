@@ -1,0 +1,80 @@
+@model UploadPhoto
+@{
+    ViewBag.Title = "Thêm ảnh";
+    var product = ViewBag.Product as Product;
+}
+<div class="fst-normal">&#9830; Cập nhật ảnh cho sản phẩm: <p style="display: inline;" class="font-monospace">@product!.Name</p></div>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="UploadPhoto" method="post" asp-route-id = "@product!.ProductId" enctype="multipart/form-data">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class=" mb-3">
+                <label asp-for="Files" class="form-label"></label>
+                <input asp-for="Files" class="form-control">
+                <span asp-validation-for="Files" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-success">Gửi</button>
+        </form>
+    </div>
+</div>
+<div class="mt-2 d-flex flex-wrap box-photo" data-id="@product.ProductId">
+    @* @foreach(var file in product!.PhotoUploads!) {
+        <div class="w-25 m-4 h-75 d-flex flex-wrap" style="justify-content: center;">
+            <img src="~/uploads/@file.FileName" class=" w-100 h-100">
+            <a class="btn btn-danger mt-2">Xóa</a>
+        </div>
+    } *@
+</div>
+
+@section Scripts {
+    <script>
+        function DeletePhoto() {
+            $(".photo-item").toArray().forEach((item) => {
+                var photoId = item.dataset.id
+                var url = "@Url.Action("DeletePhoto")" + `/${photoId}`
+                item.addEventListener("click", () => {
+                    $.ajax({
+                        url,
+                        type: "DELETE",
+                        contentType: false,
+                        processData: false,
+                        success(data) {
+                            LoadPhoto();
+                        }
+                    })
+                })
+            })
+        }
+        function LoadPhoto() {
+            var boxPhoto = $(".box-photo")
+            var productId = boxPhoto.data("id");
+            boxPhoto.empty();
+
+            var urlPhoto = "@Url.Action("ListPhoto")" + `/${productId}`;
+
+            $.ajax({
+                url: urlPhoto,
+                type: "GET",
+                contentType: false,
+                processData: false,
+                success(data) {
+                    data.path.forEach((item) => {
+                        boxPhoto.append(`
+                            <div class="w-25 m-4 h-75 d-flex flex-wrap " style="justify-content: center;">
+                                <img src="${item.path}" class=" w-100 h-100">
+                                <span class="btn btn-danger photo-item mt-2" data-id="${item.id}">Xóa</span>
+                            </div>
+                        `)
+                    })
+                    DeletePhoto()
+                }
+            })
+        }
+
+        $(document).ready(() => {
+            LoadPhoto();
+        })
+    </script>
+}
+

@@ -157,6 +157,44 @@ namespace AspMvc.Migrations
                     b.ToTable("contacts");
                 });
 
+            modelBuilder.Entity("Group", b =>
+                {
+                    b.Property<string>("GroupId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("GroupRoom")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("GroupId");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("Message", b =>
+                {
+                    b.Property<string>("MessageId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MessageBody")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MessageId");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("MessageCommentModel", b =>
                 {
                     b.Property<int>("MessageId")
@@ -168,7 +206,7 @@ namespace AspMvc.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -181,6 +219,34 @@ namespace AspMvc.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("MessageComment");
+                });
+
+            modelBuilder.Entity("MessageGroup", b =>
+                {
+                    b.Property<string>("MessageGroupId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("GroupId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MessageId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("SendDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("MessageGroupId");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("MessageId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MessageGroups");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -499,6 +565,27 @@ namespace AspMvc.Migrations
                     b.ToTable("StoreCategories");
                 });
 
+            modelBuilder.Entity("UserGroup", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("GroupId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("JoinDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("UserId", "GroupId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("UserGroups");
+                });
+
             modelBuilder.Entity("Category", b =>
                 {
                     b.HasOne("Category", "ParentCategory")
@@ -512,15 +599,34 @@ namespace AspMvc.Migrations
                 {
                     b.HasOne("RoomCommentModel", "Room")
                         .WithMany()
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoomId");
 
                     b.HasOne("AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("Room");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MessageGroup", b =>
+                {
+                    b.HasOne("Group", "Group")
+                        .WithMany()
+                        .HasForeignKey("GroupId");
+
+                    b.HasOne("Message", "Message")
+                        .WithMany()
+                        .HasForeignKey("MessageId");
+
+                    b.HasOne("AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Group");
+
+                    b.Navigation("Message");
 
                     b.Navigation("User");
                 });
@@ -661,9 +767,33 @@ namespace AspMvc.Migrations
                     b.Navigation("ParentCategory");
                 });
 
+            modelBuilder.Entity("UserGroup", b =>
+                {
+                    b.HasOne("Group", "Group")
+                        .WithMany("userGroups")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AppUser", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("Category", b =>
                 {
                     b.Navigation("CategoryChildren");
+                });
+
+            modelBuilder.Entity("Group", b =>
+                {
+                    b.Navigation("userGroups");
                 });
 
             modelBuilder.Entity("Post", b =>

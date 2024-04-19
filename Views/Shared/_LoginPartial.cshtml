@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Identity
+@using Newtonsoft.Json
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
@@ -6,12 +7,19 @@
 
 @{
     var result = await authorizationService.AuthorizeAsync(this.User, resource: null, "Admin");
+    var jsonCart = Context.Session.GetString(StoreController.CartKey) ?? string.Empty;
+    var listCart = JsonConvert.DeserializeObject<List<CartItemModel>>(jsonCart);
+    var quantity = 0;
+    if (listCart != null) quantity = listCart.Count;
 }
 
-<ul class="navbar-nav">
+<ul class="navbar-nav d-flex" style="align-items: center;">
 @if(SignInManager.IsSignedIn(this.User)) {
+    <li class="nav-item m-2">
+        <a asp-action="Cart" asp-controller="Store" style="text-decoration: none;">Giỏ hàng (@quantity) </a>
+    </li>
     <li class="nav-item btn-group" style="margin-right: 50px;">
-        <button class="mb-2 btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class=" btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             @UserManager.GetUserName(this.User)
         </button>
         <ul class="dropdown-menu">

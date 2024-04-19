@@ -1,0 +1,250 @@
+@model IList<AppUser>
+@{
+    ViewBag.Title = "Message";
+    var User = ViewBag.User as AppUser;
+    async Task<bool> CheckFriend(string userId) {
+        try {
+            var groups = await appMvcContext.Groups.Include(g => g.userGroups).ToListAsync();
+            var user = ViewBag.User as AppUser;
+            foreach (var group in groups) {
+                var userFriend = group.userGroups!.Where(us => us.UserId == userId || us.UserId == user!.Id).Count();
+                if(userFriend >= 2) {
+                    return true;
+                }
+            }
+        }catch {
+            return false;
+        }
+        return false;
+    }
+
+    async Task<string> GetGroupId(string userId) {
+        try {
+            var groups = await appMvcContext.Groups.Include(g => g.userGroups).ToListAsync();
+            var user = ViewBag.User as AppUser;
+            foreach (var group in groups) {
+                var userFriend = group.userGroups!.Where(us => us.UserId == userId || us.UserId == user!.Id).Count();
+                if(userFriend >= 2) {
+                    return group.GroupId!;
+                }
+            }
+            throw new Exception();
+        }catch {
+            return "";
+        }
+    }
+}
+
+<link rel="stylesheet" href="~/css/chatapp.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div id="plist" class="people-list">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text h-100"><i class="fa fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                    <ul class="list-unstyled chat-list mt-2 mb-0">
+                        @foreach(var user in Model) {
+                            <li class="clearfix user" data-group="@await GetGroupId(user.Id)" data-name="@user.UserName">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                <div class="about">
+                                    <div class="name">@user.UserName!.Substring(0, user.UserName.IndexOf('@'))</div>
+                                    <div class="status"> <i class="fa fa-circle offline"></i>  </div>                                            
+                                </div>
+                                @{if(await CheckFriend(user.Id)) {
+                                    <div class="delete_user" data-id="@user.Id" style="display: inline-block; margin-top: 8px;">
+                                        <button class="btn btn-danger">Xóa bạn</button>
+                                    </div>
+                                }else {
+                                    <div class="add_user" data-id="@user.Id" style="display: inline-block; margin-top: 8px;">
+                                        <button class="btn btn-success">Thêm bạn</button>
+                                    </div>
+                                }}
+                            </li>
+                            <hr class="m-2">
+                        }
+                    </ul>
+                </div>
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        
+                    </div>
+                    <div class="chat-history "  style="overflow: auto">
+                        <ul class="m-b-0 chat_message"></ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100"><i class="fa fa-send"></i></span>
+                            </div>
+                            <input type="text" class="btn-send form-control" placeholder="Enter text here...">                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+
+@section Scripts {
+    <script>
+        var addBtn = $('.add_user')
+        for(var btn of addBtn) {
+            btn.onclick = function() {
+                var userId = $(this).data("id")
+                $.ajax({
+                    url: `/Chat/AddUser/${userId}`,
+                    method: "GET",
+                }).done((results) => {
+                    location.reload();
+                })
+            }
+        }
+
+        var deleteBtn = $('.delete_user');
+        for(var btn of deleteBtn) {
+            btn.onclick = function() {
+                var userId = $(this).data("id")
+                $.ajax({
+                   url: `/Chat/DeleteUser/${userId}`,
+                   method: "GET", 
+                }).done((results) => {
+                    location.reload();
+                })
+            }
+        }
+
+        "use strict"
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chathub").build();
+        var users = $(".user")
+        var isSuccess = false;
+        for(var user of users) {
+            user.onclick = function handle(e) {
+                connection.stop()
+                if(!e.target.closest(".delete_user")) {
+                    var _this = this;
+                    var groupId = $(this).data("group")
+                    var userName = $(this).data("name")
+                    var chatMessage = $(".chat_message")
+                    $.ajax({
+                        url: `/Chat/Group/${groupId}`,
+                        method: "GET",
+                    }).done(async (results) => {
+                        chatMessage.html("");
+                        if(results.status) {
+                            $(".user.active").removeClass("active");
+                            $(_this).addClass("active")
+
+                            $('.chat-header').html(
+                                `<div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                        </a>
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">${userName}</h6>
+                                            <small>Last seen:</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 hidden-sm text-right">
+                                        <a href="javascript:void(0);" class="btn btn-outline-secondary"><i class="fa fa-camera"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-image"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-cogs"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-question"></i></a>
+                                    </div>
+                                </div>`
+                            )
+
+                            for(var messagebox of results.message) {
+                                if(messagebox.isUserLogin) {
+                                    chatMessage.append(
+                                        `<li class="clearfix">
+                                            <div class="message-data text-right">
+                                                <span class="message-data-time">${messagebox.sendDate}</span>
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                            </div>
+                                            <div class="message other-message float-right"> ${messagebox.message.messageBody} </div>
+                                        </li>`
+                                    )
+                                }
+                                else {
+                                    chatMessage.append(
+                                        `<li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">${messagebox.sendDate}</span>
+                                            </div>
+                                            <div class="message my-message">${messagebox.message.messageBody}</div>                                    
+                                        </li>`
+                                    )
+                                }
+                            }
+                            await connection.start();
+                            await connection.invoke("JoinGroup", groupId)
+                            isSuccess = true;
+                        }
+                    })
+                }
+            }
+        }
+        var chatMessage = $(".chat_message")
+
+        connection.on("ReceiveMessage", (Id, message) => {
+            @{ var userId = User!.Id; }
+            if("@userId" == Id) {
+                chatMessage.append(
+                    `<li class="clearfix">
+                        <div class="message-data text-right">
+                            <span class="message-data-time">10:10 AM, Today</span>
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                        </div>
+                        <div class="message other-message float-right"> ${message} </div>
+                    </li>`
+                )
+            }
+            else {
+                chatMessage.append(
+                    `<li class="clearfix">
+                        <div class="message-data">
+                            <span class="message-data-time">10:12 AM, Today</span>
+                        </div>
+                        <div class="message my-message">${message}</div>                                    
+                    </li>`
+                ) 
+            }
+        })
+
+        $(".input-group-prepend").click(async () => {
+            try {
+                if(isSuccess) {
+                    var groupId = $(".user.active").data("group")
+                    var value = $(".btn-send").val();
+                    await connection.invoke("SendToGroup", groupId, value)
+                    document.querySelector(".btn-send").value = ""
+                }
+            }catch(e) {
+                console.log(e.message)
+            }
+        })
+        $(".btn-send").keyup(async (e) => {
+            try {
+                if(e.keyCode == 13) {
+                    if(isSuccess) {
+                        var groupId = $(".user.active").data("group")
+                        var value = $(".btn-send").val();
+                        await connection.invoke("SendToGroup", groupId, value)
+                        document.querySelector(".btn-send").value = ""
+                    }
+                }
+            }catch(e) {
+                console.log(e.message)
+            }
+        })
+    </script>
+}

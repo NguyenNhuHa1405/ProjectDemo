@@ -1,15 +1,13 @@
 using System.Net;
 using App.Data;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging.Signing;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseKestrel(options => {
-    options.Limits.MaxRequestBodySize = null;
-});
 
 builder.Services.Configure<FormOptions>(option => {
     option.MultipartBodyLengthLimit = int.MaxValue;
@@ -68,9 +66,13 @@ builder.Services.AddAuthorization(options => {
     });
 });
 builder.Services.AddSignalR();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => {
+    options.Cookie.Name = "cartcookies";
+    options.IdleTimeout = new TimeSpan(0, 60, 0);
+});
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -78,10 +80,13 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseForwardedHeaders(new ForwardedHeadersOptions {
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
+app.UseStaticFiles();
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthentication();
@@ -91,5 +96,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapHub<CommentHub>("/commenthub");
+app.MapHub<ChatHub>("/chathub");
 
 app.Run();
+

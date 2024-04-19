@@ -27,6 +27,9 @@ public class AppMvcContext : IdentityDbContext<AppUser> {
         modelBuilder.Entity<ProductCategory>(entity => {
             entity.HasKey(p => new { p.ProductId, p.StoreCategoryId });
         });
+        modelBuilder.Entity<UserGroup>(entity => {
+            entity.HasKey(ug => new { ug.UserId, ug.GroupId });
+        });
     }
 
     public DbSet<ContactModel> contacts {set; get;}
@@ -39,4 +42,8 @@ public class AppMvcContext : IdentityDbContext<AppUser> {
     public DbSet<PhotoUploadModel> PhotoUploads {set; get;}
     public DbSet<RoomCommentModel> RoomComments {set; get;}
     public DbSet<MessageCommentModel> MessageComments {set; get;}
+    public DbSet<UserGroup> UserGroups {set; get;}
+    public DbSet<Group> Groups {set; get;}
+    public DbSet<MessageGroup> MessageGroups {set; get;}
+    public DbSet<Message> Messages {set; get;}
 }

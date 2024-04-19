@@ -4,6 +4,7 @@ using AspMvc.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.Intrinsics.X86;
 using Microsoft.AspNetCore.Identity;
+using Bogus;
 
 namespace AspMvc.Controllers;
 public class HomeController : Controller
@@ -16,6 +17,7 @@ public class HomeController : Controller
         _logger = logger;
         this.appMvcContext = appMvcContext;
         this.userManager = userManager;
+        Randomizer.Seed = new Random(8675309);
     }
 
     [TempData]

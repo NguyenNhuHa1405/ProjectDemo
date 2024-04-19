@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 
-$(".close").click(function() {
+$(".close").on("click" ,function() {
     $(".drop").remove();
 })
 /* global bootstrap: false */

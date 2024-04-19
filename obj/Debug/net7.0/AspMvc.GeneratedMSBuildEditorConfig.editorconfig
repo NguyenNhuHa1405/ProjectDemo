@@ -9,339 +9,347 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AspMvc
 build_property.RootNamespace = AspMvc
-build_property.ProjectDir = D:\WORKSPACE\AspMvc\
+build_property.ProjectDir = D:\Workspace\AspMvc\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\WORKSPACE\AspMvc
+build_property.MSBuildProjectDirectory = D:\Workspace\AspMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/Category/Create.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/Category/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/Post/Create.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/Post/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcUG9zdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/Post/Delete.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/Post/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcUG9zdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/Post/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/Post/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcUG9zdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Category/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Category/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Contact/Views/Contact/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Contact/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xDb250YWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Contact/Views/Contact/SendContact.cshtml]
+[D:/Workspace/AspMvc/Areas/Contact/Views/Contact/SendContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xDb250YWN0XFNlbmRDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Contact/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Contact/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Contact/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Contact/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Database/Views/DatabaseManage/DeleteDb.cshtml]
+[D:/Workspace/AspMvc/Areas/Database/Views/DatabaseManage/DeleteDb.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGF0YWJhc2VcVmlld3NcRGF0YWJhc2VNYW5hZ2VcRGVsZXRlRGIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Database/Views/DatabaseManage/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Database/Views/DatabaseManage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGF0YWJhc2VcVmlld3NcRGF0YWJhc2VNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Database/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Database/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGF0YWJhc2VcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Database/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Database/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGF0YWJhc2VcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Files/Views/File/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Files/Views/File/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmlsZXNcVmlld3NcRmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Files/Views/Shared/_LayoutFile.cshtml]
+[D:/Workspace/AspMvc/Areas/Files/Views/Shared/_LayoutFile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmlsZXNcVmlld3NcU2hhcmVkXF9MYXlvdXRGaWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Files/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Files/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmlsZXNcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Files/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Files/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmlsZXNcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/AccessDenied.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ConfirmEmail.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/Error.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ErrorConfirmEmail.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ErrorConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxFcnJvckNvbmZpcm1FbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ExternalLoginConfirmation.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ExternalLoginConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxFeHRlcm5hbExvZ2luQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ExternalLoginFailure.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ExternalLoginFailure.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxFeHRlcm5hbExvZ2luRmFpbHVyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ForgotPassword.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ForgotPasswordConfirmation.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/Lockout.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/Login.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/Register.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/RegisterConfirmation.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ResetPassword.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/ResetPasswordConfirmation.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/SendCode.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/SendCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxTZW5kQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/UseRecoveryCode.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/UseRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxVc2VSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/VerifyAuthenticatorCode.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/VerifyAuthenticatorCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxWZXJpZnlBdXRoZW50aWNhdG9yQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Account/VerifyCode.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Account/VerifyCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxWZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/AddPhoneNumber.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/AddPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXEFkZFBob25lTnVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/ChangePassword.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/DisplayRecoveryCodes.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/DisplayRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXERpc3BsYXlSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/EditProfile.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXEVkaXRQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/Error.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/ManageLogins.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/ManageLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXE1hbmFnZUxvZ2lucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/SetPassword.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXFNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Manage/VerifyPhoneNumber.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Manage/VerifyPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcTWFuYWdlXFZlcmlmeVBob25lTnVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/AddRoleClaim.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/AddRoleClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxBZGRSb2xlQ2xhaW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/Create.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/Delete.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/Edit.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/EditRoleClaim.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/EditRoleClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxFZGl0Um9sZUNsYWltLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/Role/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/User/AddClaim.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/User/AddClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcVXNlclxBZGRDbGFpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/User/AddRole.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/User/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcVXNlclxBZGRSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/User/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/User/SetPassword.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/User/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcVXNlclxTZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Identity/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Identity/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/Product/Create.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/Product/Delete.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/Product/Edit.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/Product/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/Product/UploadPhoto.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/Product/UploadPhoto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFVwbG9hZFBob3RvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/StoreCategory/Create.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/StoreCategory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xTdG9yZUNhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/StoreCategory/Index.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/StoreCategory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xTdG9yZUNhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Areas/Product/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Areas/Product/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Home/Index.cshtml]
+[D:/Workspace/AspMvc/Views/Chat/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Workspace/AspMvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Home/Views.cshtml]
+[D:/Workspace/AspMvc/Views/Home/Views.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Home/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Views/Home/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/Components/Category/Default.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/Components/Category/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/Error.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_LayoutCategory.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_LayoutCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_LoginPartial.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_PagingXTL.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_PagingXTL.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmdYVEwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_StatusMessage.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGF0dXNNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_Summernote.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_Summernote.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdW1tZXJub3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Store/Index.cshtml]
+[D:/Workspace/AspMvc/Views/Store/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcQ2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Workspace/AspMvc/Views/Store/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/_ViewImports.cshtml]
+[D:/Workspace/AspMvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/_ViewStart.cshtml]
+[D:/Workspace/AspMvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WORKSPACE/AspMvc/Views/Shared/_Layout.cshtml]
+[D:/Workspace/AspMvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gm4rzw78vm
